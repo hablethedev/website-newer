@@ -107,7 +107,7 @@ document.querySelectorAll('.taskbar-item').forEach(btn => {
 
 function createTerminal() {
     const terminal = createWindow('terminal', 'terminal', 300, 200, `
-        <div id="terminal-content">hazelos terminal v1.0
+        <div id="terminal-content">dmc v1.0
 > <span id="current-input"></span><span class="cursor"></span></div>
         <div class="terminal-input-container">
             <input type="text" class="terminal-input" id="terminal-input" style="opacity: 0; position: absolute;">
