@@ -94,8 +94,18 @@ document.querySelectorAll('.taskbar-item').forEach(btn => {
         } else if (windowType === 'music') {
             createWindow('music', 'music player', 200, 200, `
                 <div class="window-content" style="padding: 8px;">
-                    <button onclick="this.parentElement.querySelector('audio').play()">play</button>
-                    <button onclick="this.parentElement.querySelector('audio').pause()">pause</button>
+                    <div id="song-title" style="margin-bottom: 8px;">myuzak</div>
+                    <select id="track-select" onchange="changeSong(this.value)">
+                        <option value="music/vaporwave.mp3">HOME - We're Finally Landing</option>
+                        <option value="music/gu.mp3">hzlsounds (me) - grayscale unexcitement</option>
+                        <option value="music/ambient.mp3">bird songs i think idk whats the outside</option>
+                    </select>
+                    <div class="player-controls" style="margin-top: 8px;">
+                        <button onclick="this.parentElement.parentElement.querySelector('audio').play()">Play</button>
+                        <button onclick="this.parentElement.parentElement.querySelector('audio').pause()">Pause</button>
+                        <input type="range" min="0" max="1" step="0.1" value="1" 
+                               onchange="this.parentElement.parentElement.querySelector('audio').volume = this.value">
+                    </div>
                     <audio src="music/vaporwave.mp3" loop></audio>
                 </div>
             `);
@@ -178,6 +188,15 @@ function playBleep() {
     const bleep = document.getElementById('bleep-sound');
     bleep.currentTime = 0;
     bleep.play();
+}
+
+function changeSong(track) {
+    const audio = document.querySelector('#music audio');
+    const songTitle = document.querySelector('#song-title');
+    const trackSelect = document.querySelector('#track-select');
+    audio.src = track;
+    songTitle.textContent = trackSelect.options[trackSelect.selectedIndex].text;
+    audio.play();
 }
 
 window.addEventListener('DOMContentLoaded', () => {
