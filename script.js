@@ -154,7 +154,7 @@ function createTerminal() {
 function handleCommand(command, output) {
     const responses = {
         'help': 'available commands: help, love, secret, restart',
-        'love': 'what do you love? cheese>',
+        'love': 'what do you love? cheese?',
         'secret': 'seriously? its not gonna be that easy.',
         'webpage': 'todo: make this a very sneaky secret',
         'crash': triggerBSOD,
