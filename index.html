@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hazel's 97 machine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=MS+Sans+Serif">
+</head>
+<body>
+    <div id="startup-screen">
+        <button id="start-button"></button>
+    </div>
+    <div id="desktop" class="hidden">
+        <div id="windows"></div>
+        <div id="taskbar">
+            <button id="start-menu">start</button>
+            <div id="taskbar-icons">
+                <button class="taskbar-item" data-window="about">about hazel</button>
+                <button class="taskbar-item" data-window="art">art gallery</button>
+                <button class="taskbar-item" data-window="music">music</button>
+                <button class="taskbar-item" data-window="terminal">terminal</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bsod" class="hidden">
+        <div class="bsod-content">
+            <h1>error</h1>
+            <p>a fatal exception has occurred. [0x47 0x41 0x59]<br>
+            the current process will be terminated.<br><br>
+            * click anywhere to restart your computer</p>
+        </div>
+    </div>
+
+    <audio id="startup-sound" src="audio/startup.wav"></audio>
+    <audio id="bleep-sound" src="audio/bleep.wav"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
